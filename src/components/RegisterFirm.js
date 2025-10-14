@@ -21,11 +21,9 @@ function RegisterModal({ show, onClose, switchToLogin }) {
     setLoading(true);
 
     try {
-      // Create user with Firebase Auth
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
-      // Save additional user data to Firestore
       await setDoc(doc(db, 'users', user.uid), {
         name,
         email,

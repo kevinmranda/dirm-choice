@@ -4,7 +4,6 @@ import { doc, setDoc, getDoc } from 'firebase/firestore';
 import Header from './Header';
 import './Dashboard.css';
 
-// Import images
 import ugali from '../assets/ugali.webp';
 import rice from '../assets/wali.webp';
 import pilau from '../assets/pilau.webp';
