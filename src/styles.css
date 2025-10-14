@@ -1,0 +1,97 @@
+* Reset and base styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #fff0f0, #ffe5e5);
+  color: #333;
+}
+
+/* Container for pages */
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 40px;
+  text-align: center;
+}
+
+/* Form styling */
+form input,
+form select {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 80%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Food grid */
+.grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+/* Food card */
+.card {
+  padding: 20px;
+  background-color: #eee;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card:hover {
+  background-color: #ddd;
+}
+
+.card.selected {
+  background-color: #ff6f61;
+  color: white;
+  font-weight: bold;
+}
+
+/* Locked message */
+.locked {
+  margin-top: 20px;
+  color: red;
+  font-weight: bold;
+}
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.card {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 120px;
+  text-align: center;
+}
+
+.card:hover {
+  background-color: #ddd;
+}
+
+.card.selected {
+  background-color: #ff6f61;
+  color: white;
+  font-weight: bold;
+}
