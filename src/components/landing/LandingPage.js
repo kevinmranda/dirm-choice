@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LandingPage.css';
-import LoginModal from './LoginFirm';
-import RegisterModal from './RegisterFirm';
+import LoginModal from '../authentication/login/LoginFirm';
+import RegisterModal from '../authentication/register/RegisterFirm';
 
 function LandingPage() {
   const navigate = useNavigate();

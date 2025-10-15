@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import LandingPage from './components/LandingPage';
-import Dashboard from './components/Dashboard';
+import LandingPage from './components/landing/LandingPage';
+import Dashboard from './components/dashboard/Dashboard';
 import './styles.css';
 
 function App() {

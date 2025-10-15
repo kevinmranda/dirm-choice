@@ -187,8 +187,9 @@
   font-size: 1rem;
   margin-top: 60px;
   box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+}
 
-}.landing-footer {
+.landing-footer {
   background: #ff6f61;
   color: #fff;
   text-align: center;

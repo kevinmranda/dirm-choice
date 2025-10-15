@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.css';
 import { signOut } from 'firebase/auth';
-import { auth } from '../firebase/config';
+import { auth } from '../../firebase/config';
 
 function Header({ userName }) {
   const handleLogout = async () => {

@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { db, auth } from '../firebase/config';
+import { db, auth } from '../../firebase/config';
 import { doc, setDoc, getDoc } from 'firebase/firestore';
-import Header from './Header';
+import Header from '../Header/Header';
 import './Dashboard.css';
 
-import ugali from '../assets/ugali.webp';
-import rice from '../assets/wali.webp';
-import pilau from '../assets/pilau.webp';
-import ugaliMeat from '../assets/ugali_meat.webp';
-import ugaliFish from '../assets/ugali_fish.webp';
-import riceMeat from '../assets/rice_meat.webp';
-import riceChicken from '../assets/pilau_chicken.webp';
-import pilauMeat from '../assets/pilau_meat.webp';
-import pilauChicken from '../assets/pilau_chicken.webp';
+import ugali from '../../assets/ugali.webp';
+import rice from '../../assets/wali.webp';
+import pilau from '../../assets/pilau.webp';
+import ugaliMeat from '../../assets/ugali_meat.webp';
+import ugaliFish from '../../assets/ugali_fish.webp';
+import riceMeat from '../../assets/rice_meat.webp';
+import riceChicken from '../../assets/pilau_chicken.webp';
+import pilauMeat from '../../assets/pilau_meat.webp';
+import pilauChicken from '../../assets/pilau_chicken.webp';
 
 const coreFoods = [
   { name: 'Ugali', image: ugali },
