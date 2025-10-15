@@ -37,6 +37,12 @@ function Header({ userName }) {
         <div className="avatar-placeholder">
           {getInitials(userName)}
         </div>
+        {auth.currentUser?.email === 'admin@dirmchoice.com' && (
+  <button className="admin-btn" onClick={() => window.location.href = '/admin'}>
+    Admin Panel
+  </button>
+)}
+
         <button className="logout-btn" onClick={handleLogout}>
           Logout
         </button>

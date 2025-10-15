@@ -27,8 +27,13 @@ function LoginModal({ show, onClose, switchToRegister }) {
       setLoading(false);
 
       setTimeout(() => {
-        window.location.href = '/dashboard';
-      }, 1500);
+  if (user.email === 'admin@dirmchoice.com') {
+    window.location.href = '/admin';
+  } else {
+    window.location.href = '/dashboard';
+  }
+}, 1500);
+
 
     } catch (error) {
       setMessage('Invalid email or password');
