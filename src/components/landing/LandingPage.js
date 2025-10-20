@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './LandingPage.css';
 import LoginModal from '../authentication/login/LoginFirm';
 import RegisterModal from '../authentication/register/RegisterFirm';
+import FoodCarousel from '../carousel/FoodCarousel';
 
 function LandingPage() {
   const navigate = useNavigate();
@@ -22,6 +23,7 @@ function LandingPage() {
   return (
     <div className="landing-container">
       {/* Hero Section */}
+      
       <header className="hero-section">
         <div className="hero-text">
           <h1>Dirm Choice</h1>
@@ -32,10 +34,8 @@ function LandingPage() {
           </div>
         </div>
         <div className="hero-image">
-          <img
-            src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80"
-            alt="Delicious Food"
-          />
+          <FoodCarousel />
+          
         </div>
       </header>
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route} from 'react-router-dom';
-import AdminDashboard from './components/admin/AdminDashboard'; // adjust path if needed
+import AdminDashboard from '../src/components/admin/AdminDashboard';
+
 import LandingPage from './components/landing/LandingPage';
 import Dashboard from './components/dashboard/Dashboard';
 import { auth } from './firebase/config';

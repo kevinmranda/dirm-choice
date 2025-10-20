@@ -10,11 +10,16 @@ function AdminDashboard() {
     const fetchOrders = async () => {
       try {
         const snapshot = await getDocs(collection(db, 'users'));
+        const today = new Date().toISOString().split('T')[0];
         const allOrders = snapshot.docs.map(doc => ({
           email: doc.id,
           ...doc.data()
         }));
-        setOrders(allOrders);
+           const todayOrders = allOrders.filter(user => {
+          const orderDate = user.lastOrders?.[0]?.selectionTime?.split('T')[0];
+          return orderDate === today;
+        });
+        setOrders(todayOrders);
       } catch (error) {
         console.error('Error fetching orders:', error);
       }
@@ -40,8 +45,13 @@ function AdminDashboard() {
             <tr key={order.email}>
                   <td>{order.name || '—'}</td>
               <td>{order.email}</td>
-              <td>{order.selectedFood || '—'}</td>
-              <td>{order.selectionTime ? new Date(order.selectionTime).toLocaleString() : '—'}</td>
+             <td>{order.lastOrders?.[0]?.selectedFood || '—'}</td>
+<td>
+  {order.lastOrders?.[0]?.selectionTime
+    ? new Date(order.lastOrders[0].selectionTime).toLocaleString()
+    : '—'}
+</td>
+
             </tr>
           ))}
         </tbody>

@@ -7,17 +7,24 @@ import './Dashboard.css';
 import ugali from '../../assets/ugali.webp';
 import rice from '../../assets/wali.webp';
 import pilau from '../../assets/pilau.webp';
+import chips from '../../assets/chips.webp';
+import soda from '../../assets/soda.webp';
 import ugaliMeat from '../../assets/ugali_meat.webp';
 import ugaliFish from '../../assets/ugali_fish.webp';
 import riceMeat from '../../assets/rice_meat.webp';
-import riceChicken from '../../assets/pilau_chicken.webp';
+import riceChicken from '../../assets/rice_chicken.webp';
 import pilauMeat from '../../assets/pilau_meat.webp';
 import pilauChicken from '../../assets/pilau_chicken.webp';
+import frenchFries from '../../assets/french_fries.webp';
+import friesOmelette from '../../assets/fries_omelette.webp'
+import cola from '../../assets/cola.jpeg'; 
 
 const coreFoods = [
   { name: 'Ugali', image: ugali },
   { name: 'Rice', image: rice },
   { name: 'Pilau', image: pilau },
+  { name: 'Chips', image: chips },
+  { name: 'Soda', image: soda },
 ];
 
 const subOptions = {
@@ -33,6 +40,13 @@ const subOptions = {
     { name: 'Pilau with meat', image: pilauMeat },
     { name: 'Pilau with chicken', image: pilauChicken },
   ],
+  Chips: [
+    {name: 'French fries', image: frenchFries },
+    {name: 'Fries omelette', image: friesOmelette },
+  ],
+  Soda: [
+    { name: 'Cola', image: cola },
+  ]
 };
 
 function Dashboard() {
@@ -68,12 +82,12 @@ function Dashboard() {
           const selectedTime = new Date(data.selectionTime);
           const now = new Date();
           const diff = (now - selectedTime) / 1000;
-          if (diff >= 300) {
+          if (diff >= 900) {
             setLocked(true);
             setTimeLeft(0);
             setOrderComplete(true);
           } else {
-            setTimeLeft(300 - diff);
+            setTimeLeft(900 - diff);
             setOrderComplete(true);
           }
         }
@@ -125,7 +139,7 @@ function Dashboard() {
       setSelectedFood(food.name);
       setOrderComplete(true);
       setLocked(false);
-      setTimeLeft(300);
+      setTimeLeft(900);
       setLastOrders([{ name: food.name, time: now.toISOString() }, ...lastOrders].slice(0, 5));
 
       setSuccessMessage(`✅ Your order for "${food.name}" has been placed successfully!`);

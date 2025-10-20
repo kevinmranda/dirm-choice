@@ -120,3 +120,33 @@
     transform: translateY(0);
   }
 }
+.link {
+  color: #007bff; /* Dirm blue or your brand color */
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #0056b3; /* Slightly darker on hover */
+}
+
+.forgot-password {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  text-align: center;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.logo {
+  width: 120px;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

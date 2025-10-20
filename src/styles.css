@@ -1,4 +1,4 @@
-* Reset and base styles */
+/* Reset and base styles */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -15,8 +15,9 @@ body {
 }
 
 /* Form styling */
+
 form input,
-form select {
+ form select {
   display: block;
   margin: 10px auto;
   padding: 10px;
@@ -34,23 +35,6 @@ button {
   cursor: pointer;
 }
 
-/* Food grid */
-.grid {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
-  flex-wrap: wrap;
-}
-
-/* Food card */
-.card {
-  padding: 20px;
-  background-color: #eee;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.3s;
-}
 
 .card:hover {
   background-color: #ddd;

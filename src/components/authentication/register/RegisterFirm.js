@@ -3,6 +3,8 @@ import './RegisterFirm.css';
 import { auth, db } from '../../../firebase/config';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { setDoc, doc } from 'firebase/firestore';
+import dirmGroup from '../../../assets/dirm_group.jpg';
+
 
 function RegisterModal({ show, onClose, switchToLogin }) {
   const [name, setName] = useState('');
@@ -12,6 +14,12 @@ function RegisterModal({ show, onClose, switchToLogin }) {
   const [success, setSuccess] = useState('');
   const [loading, setLoading] = useState(false);
 
+  const isStrongPassword = (password) => {
+  const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  return regex.test(password);
+};
+
+
   if (!show) return null;
 
   const handleSubmit = async (e) => {
@@ -19,6 +27,12 @@ function RegisterModal({ show, onClose, switchToLogin }) {
     setMessage('');
     setSuccess('');
     setLoading(true);
+
+      if (!isStrongPassword(password)) {
+    setMessage("Password must be at least 8 characters and include uppercase, lowercase, number, and special character.");
+    setLoading(false);
+    return;
+  }
 
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
@@ -51,7 +65,10 @@ function RegisterModal({ show, onClose, switchToLogin }) {
   return (
     <div className="modal-overlay">
       <div className="modal-content">
+       
         <button className="close-btn" onClick={onClose}>&times;</button>
+       <img src={dirmGroup} alt="Dirm Choice Logo" className="logo" />
+
         <h2>Register</h2>
         <form onSubmit={handleSubmit} className="auth-form">
           <input type="text" placeholder="Full Name" value={name} onChange={(e) => setName(e.target.value)} required />
